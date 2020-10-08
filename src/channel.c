@@ -206,7 +206,7 @@ static int channel_send_keepalive(Channel *ch)
 static void channel_update_keepalive(Channel *ch)
 {
     gettimeofday(&ch->keepalive, NULL);
-    ch->keepalive.tv_sec += CHANNEL_KEEPALIVE_TIME;
+    ch->keepalive.tv_sec += CHANNEL_KEEPALIVE_TIMEOUT;
 
     log_info("Channel(%d) updated keep-alive.", ch->id);
 }
